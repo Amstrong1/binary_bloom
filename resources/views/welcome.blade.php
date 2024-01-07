@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
     <!-- Favicon  -->
-    <link rel="icon" href="src/img/favicon.png">
+    <link rel="icon" href="src/img/favicon.PNG">
 </head>
 
 <body class="pt-20 font-sans text-base font-normal text-gray-700 dark:bg-gray-800 dark:text-gray-300">
@@ -37,7 +37,7 @@
                     <a class="flex items-center py-2 ltr:mr-4 rtl:ml-4 text-xl" href="/">
                         {{-- <span class="text-4xl font-semibold dark:text-gray-100">Binary<span
                                 class="text-blue-700">Bloom.</span></span> --}}
-                        <img class="max-w-full h-auto" src="{{ asset('assets/img/logo.png') }}" alt="Logo">
+                        <img class="max-w-full h-12" src="{{ asset('assets/img/logo.PNG') }}" alt="Logo">
                     </a>
 
                     <!-- navbar toggler -->
@@ -88,9 +88,9 @@
                             <!--logo-->
                             <div class="mh-18 text-center px-12 mb-8">
                                 <a href="#" class="flex relative">
-                                    <span class="text-4xl font-semibold px-4 dark:text-gray-200">Binary<span
-                                            class="text-blue-700">Bloom.</span></span>
-                                    <!-- <img src="src/img/logo.png" class="max-w-full h-auto" alt="logo"> -->
+                                    {{-- <span class="text-4xl font-semibold px-4 dark:text-gray-200">Binary<span
+                                            class="text-blue-700">Bloom.</span></span> --}}
+                                    <img src="{{ asset('assets/img/logo.PNG') }}" class="max-w-full h-12" alt="logo">
                                     <span
                                         class="absolute -bottom-4 transform ltr:translate-x-1/2 rtl:-translate-x-1/2 w-20 h-0 border-t-2 border-opacity-50 border-blue-700 mx-auto"></span>
                                 </a>
@@ -878,7 +878,7 @@
                                     guiderons vers un horizon d'idées illimité et propulserons votre marque au cœur d'un
                                     panorama global en constante évolution.</p>
                             </div>
-                            <a class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-blue-700 border border-blue-700 hover:text-white hover:bg-blue-800 hover:ring-0 hover:border-blue-800 focus:bg-blue-800 focus:border-blue-800 focus:outline-none focus:ring-0 ltr:mr-4 rtl:ml-4" style="background-color: #1096bd; border-color: #1096bd"
+                            <a class="mt-2 py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-blue-700 border border-blue-700 hover:text-white hover:bg-blue-800 hover:ring-0 hover:border-blue-800 focus:bg-blue-800 focus:border-blue-800 focus:outline-none focus:ring-0 ltr:mr-4 rtl:ml-4" style="background-color: #1096bd; border-color: #1096bd"
                                 href="#service">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="inline-block mr-1" width="1.5rem"
                                     height="1.5rem" fill="currentColor" viewBox="0 0 512 512">
@@ -895,7 +895,7 @@
                                 Nos Services
                             </a>
 
-                            <a class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-800 bg-gray-100 border border-gray-100 hover:text-gray-900 hover:bg-gray-200 hover:ring-0 hover:border-gray-200 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0"
+                            <a class="mt-2 py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-800 bg-gray-100 border border-gray-100 hover:text-gray-900 hover:bg-gray-200 hover:ring-0 hover:border-gray-200 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0"
                                 href="#portfolio">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="inline-block mr-1" width="1.5rem"
                                     height="1.5rem" fill="currentColor" viewBox="0 0 512 512">
@@ -911,7 +911,7 @@
                                     <path d="M294,240s-21.51,16-38,16-38-16-38-16"
                                         style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
                                 </svg>
-                                Nos récents projets
+                                Nos projets récents
                             </a>
                         </div>
                     </div>
@@ -945,8 +945,7 @@
                                 Chez BinaryBloom, nous sommes passionnés par l'innovation digitale et dédiés à offrir
                                 des solutions sur mesure pour répondre à vos besoins spécifiques. Fort de ses 7 ans
                                 d'expérience, Binary Bloom est une équipe dynamique de professionnels spécialisés dans
-                                le
-                                développement web, mobile et le marketing digital.
+                                le développement web, mobile et le marketing digital.
                             </p>
                         </div>
                     </div>
@@ -1198,12 +1197,12 @@
                 <!-- Portfolio Content -->
                 <div class="flex flex-wrap flex-row -mx-4 lightgallery-thumbnail">
                     <figure x-show="tab === 'web' || tab === 'all'"
-                        data-src="{{ asset('assets/img/portfolio/ndoumbi.png') }}"
+                        data-src="{{ asset('assets/img/portfolio/ndoumbi.PNG') }}"
                         class="flex-shrink max-w-full px-4 w-full sm:w-1/2 lg:w-1/3 group"
                         data-sub-html="title images">
                         <div class="relative h-48 overflow-hidden cursor-pointer mb-6">
                             <img class="block w-full h-auto transform duration-500 hover:scale-125"
-                                src="{{ asset('assets/img/portfolio/ndoumbi.png') }}" alt="Image Description">
+                                src="{{ asset('assets/img/portfolio/ndoumbi.PNG') }}" alt="Image Description">
                             <figcaption
                                 class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center" style="background-color: #1096bd;">
                                 <h3 class="text-base leading-normal font-semibold my-1 text-gray-100">Ndoumbi - Conseil
@@ -1214,12 +1213,12 @@
                     </figure>
 
                     <figure x-show="tab === 'web' || tab === 'all'"
-                        data-src="{{ asset('assets/img/portfolio/traiteurlocal.png') }}"
+                        data-src="{{ asset('assets/img/portfolio/traiteurlocal.PNG') }}"
                         class="flex-shrink max-w-full px-4 w-full sm:w-1/2 lg:w-1/3 group"
                         data-sub-html="title images">
                         <div class="relative h-48 overflow-hidden cursor-pointer mb-6">
                             <img class="block w-full h-auto transform duration-500 hover:scale-125"
-                                src="{{ asset('assets/img/portfolio/traiteurlocal.png') }}" alt="Image Description">
+                                src="{{ asset('assets/img/portfolio/traiteurlocal.PNG') }}" alt="Image Description">
                             <figcaption
                                 class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center" style="background-color: #1096bd;">
                                 <h3 class="text-base leading-normal font-semibold my-1 text-gray-100">Traiteur Local -
@@ -1231,12 +1230,12 @@
                     </figure>
 
                     <figure x-show="tab === 'web' || tab === 'all'"
-                        data-src="{{ asset('assets/img/portfolio/motemaxx.png') }}"
+                        data-src="{{ asset('assets/img/portfolio/motemaxx.PNG') }}"
                         class="flex-shrink max-w-full px-4 w-full sm:w-1/2 lg:w-1/3 group"
                         data-sub-html="title images">
                         <div class="relative h-48 overflow-hidden cursor-pointer mb-6">
                             <img class="block w-full h-auto transform duration-500 hover:scale-125"
-                                src="{{ asset('assets/img/portfolio/motemaxx.png') }}" alt="Image Description">
+                                src="{{ asset('assets/img/portfolio/motemaxx.PNG') }}" alt="Image Description">
                             <figcaption
                                 class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center" style="background-color: #1096bd;">
                                 <h3 class="text-base leading-normal font-semibold my-1 text-gray-100">Institut de
@@ -1249,12 +1248,12 @@
                     </figure>
 
                     <figure x-show="tab === 'photo' || tab === 'all'"
-                        data-src="{{ asset('assets/img/portfolio/avisclient.png') }}"
+                        data-src="{{ asset('assets/img/portfolio/avisclient.PNG') }}"
                         class="flex-shrink max-w-full px-4 w-full sm:w-1/2 lg:w-1/3 group"
                         data-sub-html="title images">
                         <div class="relative h-48 overflow-hidden cursor-pointer mb-6">
                             <img class="block w-full h-auto transform duration-500 hover:scale-125"
-                                src="{{ asset('assets/img/portfolio/avisclient.png') }}" alt="Image Description">
+                                src="{{ asset('assets/img/portfolio/avisclient.PNG') }}" alt="Image Description">
                             <figcaption
                                 class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center" style="background-color: #1096bd;">
                                 <h3 class="text-base leading-normal font-semibold my-1 text-gray-100">Avis Client Pro
@@ -1345,8 +1344,8 @@
                                         <p class="mb-0">
                                             <span class="text-base font-semibold">Rafael Ezo</span>
                                         </p>
-                                        <p class="mb-0"><span class="text-sm text-gray-500 ml-2">CEO One
-                                                Company</span></p>
+                                        {{-- <p class="mb-0"><span class="text-sm text-gray-500 ml-2">CEO One
+                                                Company</span></p> --}}
                                         <blockquote>
                                             <ul class="flex my-2 mx-auto justify-center">
                                                 <li class="mr-3 text-yellow-300">
@@ -1419,8 +1418,8 @@
                                         <p class="mb-0">
                                             <span class="text-base font-semibold">Jessica Ramos</span>
                                         </p>
-                                        <p class="mb-0"><span class="text-sm text-gray-500 ml-2">CEO Two
-                                                Company</span></p>
+                                        {{-- <p class="mb-0"><span class="text-sm text-gray-500 ml-2">CEO Two
+                                                Company</span></p> --}}
                                         <blockquote>
                                             <ul class="flex my-2 mx-auto justify-center">
                                                 <li class="mr-3 text-yellow-300">
@@ -1494,8 +1493,8 @@
                                         <p class="mb-0">
                                             <span class="text-base font-semibold">Demian Berbaza</span>
                                         </p>
-                                        <p class="mb-0"><span class="text-sm text-gray-500 ml-2">CEO Three
-                                                Company</span></p>
+                                        {{-- <p class="mb-0"><span class="text-sm text-gray-500 ml-2">CEO Three
+                                                Company</span></p> --}}
                                         <blockquote>
                                             <ul class="flex my-2 mx-auto justify-center">
                                                 <li class="mr-3 text-yellow-300">
