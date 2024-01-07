@@ -21,7 +21,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
 
     <!-- Favicon  -->
-    <link rel="icon" href="src/img/favicon.PNG">
+    <link rel="icon" href="{{ asset('src/img/favicon.png') }}">
 </head>
 
 <body class="pt-20 font-sans text-base font-normal text-gray-700 dark:bg-gray-800 dark:text-gray-300">
@@ -355,7 +355,7 @@
                     <a class="hidden lg:flex items-center py-2 ltr:mr-4 rtl:ml-4 text-xl" href="/">
                         {{-- <span class="text-4xl font-semibold dark:text-gray-100">Binary<span
                                 class="text-blue-700">Bloom.</span></span> --}}
-                        <img class="max-w-full h-12" src="{{ asset('assets/img/logo.png') }}" alt="Logo">
+                        <img class="max-w-full h-12" src="{{ asset('assets/img/logo.PNG') }}" alt="Logo">
                     </a>
 
                     <!-- menu -->
