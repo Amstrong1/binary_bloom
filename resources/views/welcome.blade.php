@@ -25,6 +25,9 @@
 </head>
 
 <body class="pt-20 font-sans text-base font-normal text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+    @php
+        // dd(app()->getLocale());
+    @endphp
     <!-- ========== { HEADER }==========  -->
     <header>
         <!-- Navbar -->
@@ -90,7 +93,8 @@
                                 <a href="#" class="flex relative">
                                     {{-- <span class="text-4xl font-semibold px-4 dark:text-gray-200">Binary<span
                                             class="text-blue-700">Bloom.</span></span> --}}
-                                    <img src="{{ asset('assets/img/logo.PNG') }}" class="max-w-full h-12" alt="logo">
+                                    <img src="{{ asset('assets/img/logo.PNG') }}" class="max-w-full h-12"
+                                        alt="logo">
                                     <span
                                         class="absolute -bottom-4 transform ltr:translate-x-1/2 rtl:-translate-x-1/2 w-20 h-0 border-t-2 border-opacity-50 border-blue-700 mx-auto"></span>
                                 </a>
@@ -102,241 +106,20 @@
                                     <ul id="side-menu" class="w-full float-none flex flex-col">
                                         <li class="relative">
                                             <a href="/"
-                                                class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">Accueil</a>
+                                                class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">{{ __('message.home') }}</a>
                                         </li>
                                         <li class="relative">
                                             <a href="/#about"
-                                                class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">A Propos</a>
+                                                class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">{{ __('message.about') }}</a>
                                         </li>
                                         <li class="relative">
                                             <a href="/#portfolio"
-                                                class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">Portfolio</a>
+                                                class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">{{ __('message.portfolio') }}</a>
                                         </li>
                                         <li class="relative">
                                             <a href="/#contact"
-                                                class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">Contact</a>
+                                                class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">{{ __('message.contact') }}</a>
                                         </li>
-                                        {{-- <li class="relative">
-                                            <a href="snippets//"
-                                                class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">Snippets</a>
-                                        </li> --}}
-
-                                        <!-- dropdown with submenu-->
-                                        {{-- <li class="relative" x-data="{ open: false }"
-                                            @keydown.escape.stop="open = false" @click.away="open = false">
-                                            <a id="mobiledrop-04"
-                                                class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="javascript:;" @click="open = !open" aria-haspopup="true"
-                                                x-bind:aria-expanded="open"
-                                                :class="{ 'text-blue-700 dark:text-gray-100': open }">
-                                                Pages
-                                                <!-- caret -->
-                                                <span class="inline-block ltr:float-right rtl:float-left mt-1 pt-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                        class="transform transition duration-300"
-                                                        :class="{ 'rotate-0': open, 'ltr:-rotate-90 rtl:rotate-90': !open }"
-                                                        width=".8rem" height=".8rem" fill="currentColor"
-                                                        viewBox="0 0 512 512">
-                                                        <polyline points="112 184 256 328 400 184"
-                                                            style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
-                                                    </svg>
-                                                </span>
-                                            </a>
-
-                                            <!-- dropdown menu -->
-                                            <ul class="block rounded rounded-t-none top-full z-50 py-0.5 ltr:text-left rtl:text-right bg-white dark:bg-gray-800 mb-4"
-                                                style="min-width: 12rem" x-description="Dropdown menu" x-show="open"
-                                                role="menu" aria-orientation="vertical"
-                                                aria-labelledby="mobiledrop-04">
-                                                <!--submenu-->
-                                                <li class="relative" x-data="{ open: false }"
-                                                    @keydown.escape.stop="open = false" @click.away="open = false">
-                                                    <a id="sidemenu-01"
-                                                        class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                        href="javascript:;" @click="open = !open"
-                                                        aria-haspopup="true" x-bind:aria-expanded="open"
-                                                        :class="{ 'text-blue-700 dark:text-gray-100': open }">
-                                                        Pages
-                                                        <!-- caret -->
-                                                        <span
-                                                            class="inline-block ltr:float-right rtl:float-left mt-1 pt-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                class="transform transition duration-300"
-                                                                :class="{
-                                                                    'rotate-0': open,
-                                                                    'ltr:-rotate-90 rtl:rotate-90': !
-                                                                        open
-                                                                }"
-                                                                width=".8rem" height=".8rem" fill="currentColor"
-                                                                viewBox="0 0 512 512">
-                                                                <polyline points="112 184 256 328 400 184"
-                                                                    style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
-                                                            </svg>
-                                                        </span>
-                                                    </a>
-
-                                                    <!--dropdown submenu-->
-                                                    <ul class="block rounded rounded-t-none top-full z-50 ltr:ml-3 rtl:mr-3 py-0.5 ltr:text-left rtl:text-right bg-white dark:bg-gray-800"
-                                                        style="min-width: 12rem" x-description="Dropdown menu"
-                                                        x-show="open" role="menu" aria-orientation="vertical"
-                                                        aria-labelledby="sidemenu-01">
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="{{ route('about') }}">About</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="career.html">Career</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="contact.html">Contact</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="fax.html">Fax</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="portfolio.html">Portfolio</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="pricing.html">Pricing</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="services.html">Services</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="coming-soon.html">Coming soon</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="404.html">404</a></li>
-                                                    </ul>
-                                                </li><!--end submenu-->
-
-                                                <!--submenu-->
-                                                <li class="relative" x-data="{ open: false }"
-                                                    @keydown.escape.stop="open = false" @click.away="open = false">
-                                                    <a id="sidemenu-02"
-                                                        class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                        href="javascript:;" @click="open = !open"
-                                                        aria-haspopup="true" x-bind:aria-expanded="open"
-                                                        :class="{ 'text-blue-700 dark:text-gray-100': open }">
-                                                        Blogs
-                                                        <!-- caret -->
-                                                        <span
-                                                            class="inline-block ltr:float-right rtl:float-left mt-1 pt-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                class="transform transition duration-300"
-                                                                :class="{
-                                                                    'rotate-0': open,
-                                                                    'ltr:-rotate-90 rtl:rotate-90': !
-                                                                        open
-                                                                }"
-                                                                width=".8rem" height=".8rem" fill="currentColor"
-                                                                viewBox="0 0 512 512">
-                                                                <polyline points="112 184 256 328 400 184"
-                                                                    style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
-                                                            </svg>
-                                                        </span>
-                                                    </a>
-
-                                                    <!--dropdown submenu-->
-                                                    <ul class="block rounded rounded-t-none top-full z-50 ltr:ml-3 rtl:mr-3 py-0.5 ltr:text-left rtl:text-right bg-white dark:bg-gray-800"
-                                                        style="min-width: 12rem" x-description="Dropdown menu"
-                                                        x-show="open" role="menu" aria-orientation="vertical"
-                                                        aria-labelledby="sidemenu-02">
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="category.html">Category</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="category-list.html">Category list</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="search.html">Search</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="author.html">Author</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="single-post.html">Single post</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="full-width-post.html">Full width</a></li>
-                                                    </ul>
-                                                </li><!--end submenu-->
-
-                                                <!--submenu-->
-                                                <li class="relative" x-data="{ open: false }"
-                                                    @keydown.escape.stop="open = false" @click.away="open = false">
-                                                    <a id="sidemenu-03"
-                                                        class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                        href="javascript:;" @click="open = !open"
-                                                        aria-haspopup="true" x-bind:aria-expanded="open"
-                                                        :class="{ 'text-blue-700 dark:text-gray-100': open }">
-                                                        Users
-                                                        <!-- caret -->
-                                                        <span
-                                                            class="inline-block ltr:float-right rtl:float-left mt-1 pt-1">
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                class="transform transition duration-300"
-                                                                :class="{
-                                                                    'rotate-0': open,
-                                                                    'ltr:-rotate-90 rtl:rotate-90': !
-                                                                        open
-                                                                }"
-                                                                width=".8rem" height=".8rem" fill="currentColor"
-                                                                viewBox="0 0 512 512">
-                                                                <polyline points="112 184 256 328 400 184"
-                                                                    style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
-                                                            </svg>
-                                                        </span>
-                                                    </a>
-
-                                                    <!--dropdown submenu-->
-                                                    <ul class="block rounded rounded-t-none top-full z-50 ltr:ml-3 rtl:mr-3 py-0.5 ltr:text-left rtl:text-right bg-white dark:bg-gray-800"
-                                                        style="min-width: 12rem" x-description="Dropdown menu"
-                                                        x-show="open" role="menu" aria-orientation="vertical"
-                                                        aria-labelledby="sidemenu-03">
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="user-login.html">Login</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="user-register.html">Register</a></li>
-                                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                                href="user-forgot.html">Forgot password</a></li>
-                                                    </ul>
-                                                </li><!--end submenu-->
-                                            </ul>
-                                        </li>
-
-                                        <!-- dropdown -->
-                                        <li class="relative" x-data="{ open: false }"
-                                            @keydown.escape.stop="open = false" @click.away="open = false">
-                                            <a id="mobiledrop-03"
-                                                class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="javascript:;" @click="open = !open" aria-haspopup="true"
-                                                x-bind:aria-expanded="open"
-                                                :class="{ 'text-blue-700 dark:text-gray-100': open }">
-                                                Docs
-                                                <!-- caret -->
-                                                <span class="inline-block ltr:float-right rtl:float-left mt-1 pt-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                                        class="transform transition duration-300"
-                                                        :class="{ 'rotate-0': open, 'ltr:-rotate-90 rtl:rotate-90': !open }"
-                                                        width=".8rem" height=".8rem" fill="currentColor"
-                                                        viewBox="0 0 512 512">
-                                                        <polyline points="112 184 256 328 400 184"
-                                                            style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
-                                                    </svg>
-                                                </span>
-                                            </a>
-
-                                            <!-- dropdown menu -->
-                                            <ul class="block rounded rounded-t-none top-full z-50 py-0.5 ltr:text-left rtl:text-right bg-white dark:bg-gray-800 mb-4"
-                                                style="min-width: 12rem" x-description="Dropdown menu" x-show="open"
-                                                role="menu" aria-orientation="vertical"
-                                                aria-labelledby="mobiledrop-03">
-                                                <li class="relative">
-                                                    <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                        href="docs//">Documentation</a>
-                                                </li>
-                                                <li class="relative">
-                                                    <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                        href="docs/components/alerts.html">Components</a>
-                                                </li>
-                                                <li class="relative">
-                                                    <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                        href="docs/started/changelog.html">Changelog</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="relative">
-                                            <a href="docs/support.html"
-                                                class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">Support</a>
-                                        </li> --}}
                                     </ul>
                                 </nav>
                             </div>
@@ -370,19 +153,68 @@
                                 <span
                                     class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"
                                     :class="{ 'opacity-100': open }"></span>
-                                Accueil
+                                {{ __('message.home') }}
+                            </a>
+                        </li>
+
+                        <li class="relative">
+                            <a class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
+                                href="/#about">
+                                <span
+                                    class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"></span>
+                                {{ __('message.about') }}
+                            </a>
+                        </li>
+
+                        <li class="relative">
+                            <a class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
+                                href="/#service">
+                                <span
+                                    class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"></span>
+                                {{ __('message.service') }}
+                            </a>
+                        </li>
+
+                        <li class="relative">
+                            <a class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
+                                href="/#portfolio">
+                                <span
+                                    class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"></span>
+                                {{ __('message.portfolio') }}
+                            </a>
+                        </li>
+
+                        <li class="relative">
+                            <a class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
+                                href="/#contact">
+                                <span
+                                    class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"></span>
+                                {{ __('message.contact') }}
+                            </a>
+                        </li>
+
+                        <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false"
+                            @mouseleave="open = false">
+                            <a id="dropdown-mega"
+                                class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
+                                href="javascript:;" @mouseenter="open = !open" aria-haspopup="true"
+                                x-bind:aria-expanded="open" :class="{ 'text-blue-700 dark:text-gray-100': open }">
+                                <span
+                                    class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"
+                                    :class="{ 'opacity-100': open }"></span>
+                                {{ __('message.language') }}
                                 <!-- caret -->
-                                {{-- <span class="inline-block ltr:ml-2 rtl:mr-2">
+                                <span class="inline-block ltr:ml-2 rtl:mr-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width=".8rem" height=".8rem"
                                         fill="currentColor" viewBox="0 0 512 512">
                                         <polyline points="112 184 256 328 400 184"
                                             style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
                                     </svg>
-                                </span> --}}
+                                </span>
                             </a>
 
                             <!-- dropdown menu -->
-                            {{-- <div class="block absolute left-1/2 right-auto transform -translate-x-1/2 border-t-2 border-blue-700 rounded rounded-t-none top-full z-50 py-0.5 ltr:text-left rtl:text-right bg-white dark:bg-gray-800 shadow-md"
+                            <div class="block absolute left-1/2 right-auto transform -translate-x-1/2 border-t-2 border-blue-700 rounded rounded-t-none top-full z-50 py-0.5 ltr:text-left rtl:text-right bg-white dark:bg-gray-800 shadow-md"
                                 style="min-width: 38rem;display:none" x-description="Dropdown menu" x-show="open"
                                 role="menu" aria-orientation="vertical" aria-labelledby="dropdown-mega"
                                 x-transition:enter="transition duration-200"
@@ -392,453 +224,49 @@
                                 x-transition:leave-start="transform opacity-100 translate-y-0"
                                 x-transition:leave-end="transform opacity-0 translate-y-4">
                                 <div class="flex flex-wrap flex-row text-center">
-                                    <div class="flex-shrink w-full max-w-full md:w-1/2 px-4">
+                                    <div class="flex-shrink w-64 px-4">
                                         <div class="py-5">
-                                            <a class="flex w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="index-advertising.html">
-                                                <div
-                                                    class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 bg-blue-700 text-white rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="1rem"
-                                                        height="1rem" fill="currentColor" class="bi bi-megaphone"
-                                                        viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49a68.14 68.14 0 0 0-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 74.663 74.663 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199V2.5zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0zm-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233c.18.01.359.022.537.036 2.568.189 5.093.744 7.463 1.993V3.85zm-9 6.215v-4.13a95.09 95.09 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A60.49 60.49 0 0 1 4 10.065zm-.657.975l1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68.019 68.019 0 0 0-1.722-.082z">
-                                                        </path>
-                                                    </svg>
-                                                </div>
-                                                <div class="drop-text">
-                                                    <p class="fw-medium">Advertising</p>
-                                                </div>
-                                            </a>
-                                            <a class="flex w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="index-branding.html">
-                                                <div
-                                                    class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 bg-blue-700 text-white rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                        height="16" fill="currentColor" class="bi bi-briefcase"
-                                                        viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z">
-                                                        </path>
-                                                    </svg>
-                                                </div>
-                                                <div class="drop-text">
-                                                    <p class="fw-medium">Branding</p>
-                                                </div>
-                                            </a>
-                                            <a class="flex w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="index-creative.html">
-                                                <div
-                                                    class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 bg-blue-700 text-white rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                        height="16" fill="currentColor" class="bi bi-lightbulb"
-                                                        viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z">
-                                                        </path>
-                                                    </svg>
-                                                </div>
-                                                <div class="drop-text">
-                                                    <p class="fw-medium">Creative</p>
-                                                </div>
-                                            </a>
-                                            <a class="flex w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="index-digital.html">
-                                                <div
-                                                    class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 bg-blue-700 text-white rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                        height="16" fill="currentColor" class="bi bi-laptop"
-                                                        viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd"
-                                                            d="M13.5 3h-11a.5.5 0 0 0-.5.5V11h12V3.5a.5.5 0 0 0-.5-.5zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11z">
-                                                        </path>
-                                                        <path
-                                                            d="M0 12h16v.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5V12z">
-                                                        </path>
-                                                    </svg>
-                                                </div>
-                                                <div class="drop-text">
-                                                    <p class="fw-medium">Digital</p>
-                                                </div>
-                                            </a>
-                                            <a class="flex w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="index-graphic.html">
-                                                <div
-                                                    class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 bg-blue-700 text-white rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                        height="16" fill="currentColor" class="bi bi-palette"
-                                                        viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z">
-                                                        </path>
-                                                        <path
-                                                            d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8zm-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7z">
-                                                        </path>
-                                                    </svg>
-                                                </div>
-                                                <div class="drop-text">
-                                                    <p class="fw-medium">Graphic</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="flex-shrink w-full max-w-full md:w-1/2 px-4 bg-gray-50 dark:bg-gray-900">
-                                        <div class="py-5">
-                                            <a class="flex w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="index-marketing.html">
-                                                <div
-                                                    class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 bg-blue-700 text-white rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                        height="16" fill="currentColor" class="bi bi-bar-chart"
-                                                        viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z">
-                                                        </path>
-                                                    </svg>
-                                                </div>
-                                                <div class="drop-text">
-                                                    <p class="fw-medium">Marketing</p>
-                                                </div>
-                                            </a>
-                                            <a class="flex w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="index-mobile-app.html">
-                                                <div
-                                                    class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 bg-blue-700 text-white rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                        height="16" fill="currentColor"
-                                                        class="bi bi-app-indicator" viewBox="0 0 16 16">
-                                                        <path fill-rule="evenodd"
-                                                            d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z">
-                                                        </path>
-                                                        <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="drop-text">
-                                                    <p class="fw-medium">Mobile App</p>
-                                                </div>
-                                            </a>
-                                            <a class="flex w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="index-seo.html">
-                                                <div
-                                                    class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 bg-blue-700 text-white rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                        height="16" fill="currentColor" class="bi bi-search"
-                                                        viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z">
-                                                        </path>
-                                                    </svg>
-                                                </div>
-                                                <div class="drop-text">
-                                                    <p class="fw-medium">SEO</p>
-                                                </div>
-                                            </a>
-                                            <a class="flex w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="index-social-media.html">
-                                                <div
-                                                    class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 bg-blue-700 text-white rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                        height="16" fill="currentColor" class="bi bi-share"
-                                                        viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z">
-                                                        </path>
-                                                    </svg>
-                                                </div>
-                                                <div class="drop-text">
-                                                    <p class="fw-medium">Social Media</p>
-                                                </div>
-                                            </a>
-                                            <a class="flex w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="index-web-design.html">
-                                                <div
-                                                    class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 bg-blue-700 text-white rounded">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16"
-                                                        height="16" fill="currentColor" class="bi bi-globe2"
-                                                        viewBox="0 0 16 16">
-                                                        <path
-                                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855-.143.268-.276.56-.395.872.705.157 1.472.257 2.282.287V1.077zM4.249 3.539c.142-.384.304-.744.481-1.078a6.7 6.7 0 0 1 .597-.933A7.01 7.01 0 0 0 3.051 3.05c.362.184.763.349 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9.124 9.124 0 0 1-1.565-.667A6.964 6.964 0 0 0 1.018 7.5h2.49zm1.4-2.741a12.344 12.344 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332zM8.5 5.09V7.5h2.99a12.342 12.342 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.612 13.612 0 0 1 7.5 10.91V8.5H4.51zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741H8.5zm-3.282 3.696c.12.312.252.604.395.872.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a6.696 6.696 0 0 1-.598-.933 8.853 8.853 0 0 1-.481-1.079 8.38 8.38 0 0 0-1.198.49 7.01 7.01 0 0 0 2.276 1.522zm-1.383-2.964A13.36 13.36 0 0 1 3.508 8.5h-2.49a6.963 6.963 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667zm6.728 2.964a7.009 7.009 0 0 0 2.275-1.521 8.376 8.376 0 0 0-1.197-.49 8.853 8.853 0 0 1-.481 1.078 6.688 6.688 0 0 1-.597.933zM8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855.143-.268.276-.56.395-.872A12.63 12.63 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.963 6.963 0 0 0 14.982 8.5h-2.49a13.36 13.36 0 0 1-.437 3.008zM14.982 7.5a6.963 6.963 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008h2.49zM11.27 2.461c.177.334.339.694.482 1.078a8.368 8.368 0 0 0 1.196-.49 7.01 7.01 0 0 0-2.275-1.52c.218.283.418.597.597.932zm-.488 1.343a7.765 7.765 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z">
-                                                        </path>
-                                                    </svg>
-                                                </div>
-                                                <div class="drop-text">
-                                                    <p class="fw-medium">Web Design</p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="flex-shrink w-full px-4 text-center border-t border-gray-200 dark:border-gray-900 dark:bg-opacity-40">
-                                        <div class="p-4 text-sm">Pre-build landing pages for your professional Agency.
+                                            <form action="{{ route('lang') }}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="lang" value="fr">
+                                                <button type="submit"
+                                                    class="flex items-center w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">
+                                                    <div class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 rounded">
+                                                        <img class="w-8" src="{{ asset('assets/img/fr.png') }}"
+                                                            alt="fr">
+                                                    </div>
+                                                    <div class="drop-text">
+                                                        <p class="fw-medium">Francais</p>
+                                                    </div>
+                                                </button>
+                                            </form>
+
+                                            <form action="{{ route('lang') }}" method="post">
+                                                @csrf
+                                                <input type="hidden" name="lang" value="en">
+                                                <button type="submit"
+                                                    class="flex items-center w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">
+                                                    <div class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 rounded">
+                                                        <img class="w-8" src="{{ asset('assets/img/en.png') }}"
+                                                            alt="en">
+                                                    </div>
+                                                    <div class="drop-text">
+                                                        <p class="fw-medium">English</p>
+                                                    </div>
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
-                            </div> --}}
+                            </div>
                         </li>
-                        {{-- <li class="relative">
-                            <a class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                href="snippets//">
-                                <span
-                                    class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"></span>
-                                Snippets
-                            </a>
-                        </li> --}}
-
-                        <li class="relative">
-                            <a class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                href="/#about">
-                                <span
-                                    class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"></span>
-                                A Propos
-                            </a>
-                        </li>
-
-                        <li class="relative">
-                            <a class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                href="/#portfolio">
-                                <span
-                                    class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"></span>
-                                Portfolio
-                            </a>
-                        </li>
-
-                        <li class="relative">
-                            <a class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                href="/#contact">
-                                <span
-                                    class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"></span>
-                                Contact
-                            </a>
-                        </li>
-
-                        <!-- dropdown with submenu-->
-                        {{-- <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false"
-                            @mouseleave="open = false">
-                            <a id="dropdown-02"
-                                class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                href="javascript:;" @mouseenter="open = !open" aria-haspopup="true"
-                                x-bind:aria-expanded="open" :class="{ 'text-blue-700 dark:text-gray-100': open }">
-                                <span
-                                    class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"
-                                    :class="{ 'opacity-100': open }"></span>
-                                Pages
-                                <!-- caret -->
-                                <span class="inline-block ltr:ml-2 rtl:mr-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width=".8rem" height=".8rem"
-                                        fill="currentColor" viewBox="0 0 512 512">
-                                        <polyline points="112 184 256 328 400 184"
-                                            style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
-                                    </svg>
-                                </span>
-                            </a>
-                            <!-- dropdown menu -->
-                            <ul class="block absolute left-1/2 right-auto transform -translate-x-1/2 border-t-2 border-blue-700 rounded rounded-t-none top-full z-50 py-0.5 ltr:text-left rtl:text-right bg-white dark:bg-gray-800 shadow-md"
-                                style="min-width: 12rem;display:none" x-description="Dropdown menu" x-show="open"
-                                role="menu" aria-orientation="vertical" aria-labelledby="dropdown-02"
-                                x-transition:enter="transition duration-200"
-                                x-transition:enter-start="transform opacity-0 translate-y-4"
-                                x-transition:enter-end="transform opacity-100 translate-y-0"
-                                x-transition:leave="transition translate-y-4"
-                                x-transition:leave-start="transform opacity-100 translate-y-0"
-                                x-transition:leave-end="transform opacity-0 translate-y-4">
-                                <!--submenu-->
-                                <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false"
-                                    @mouseleave="open = false">
-                                    <a id="submenu-01"
-                                        class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                        href="javascript:;" @mouseenter="open = !open" aria-haspopup="true"
-                                        x-bind:aria-expanded="open"
-                                        :class="{ 'text-blue-700 dark:text-gray-100': open }">
-                                        Pages
-                                        <!-- caret -->
-                                        <span class="inline-block ltr:float-right rtl:float-left mt-1 pt-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="transform ltr:-rotate-90 rtl:rotate-90" width=".8rem"
-                                                height=".8rem" fill="currentColor" viewBox="0 0 512 512">
-                                                <polyline points="112 184 256 328 400 184"
-                                                    style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
-                                            </svg>
-                                        </span>
-                                    </a>
-
-                                    <!--dropdown submenu-->
-                                    <ul class="block absolute ltr:left-full ltr:right-auto rtl:right-full rtl:left-auto transform border-t-2 border-blue-700 rounded rounded-t-none top-full z-50 py-0.5 ltr:text-left rtl:text-right -mt-11 ml-0 mr-0 bg-white dark:bg-gray-800 shadow-md"
-                                        style="min-width: 12rem" x-description="Dropdown menu" x-show="open"
-                                        role="menu" aria-orientation="vertical" aria-labelledby="submenu-01"
-                                        x-transition:enter="transition duration-200"
-                                        x-transition:enter-start="transform opacity-0 translate-y-4"
-                                        x-transition:enter-end="transform opacity-100 translate-y-0"
-                                        x-transition:leave="transition translate-y-4"
-                                        x-transition:leave-start="transform opacity-100 translate-y-0"
-                                        x-transition:leave-end="transform opacity-0 translate-y-4">
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="{{ route('about') }}">About</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="career.html">Career</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="contact.html">Contact</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="fax.html">Fax</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="portfolio.html">Portfolio</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="pricing.html">Pricing</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="services.html">Services</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="coming-soon.html">Coming soon</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="404.html">404</a></li>
-                                    </ul>
-                                </li><!--end submenu-->
-
-                                <!--submenu-->
-                                <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false"
-                                    @mouseleave="open = false">
-                                    <a id="submenu-02"
-                                        class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                        href="javascript:;" @mouseenter="open = !open" aria-haspopup="true"
-                                        x-bind:aria-expanded="open"
-                                        :class="{ 'text-blue-700 dark:text-gray-100': open }">
-                                        Blogs
-                                        <!-- caret -->
-                                        <span class="inline-block ltr:float-right rtl:float-left mt-1 pt-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="transform ltr:-rotate-90 rtl:rotate-90" width=".8rem"
-                                                height=".8rem" fill="currentColor" viewBox="0 0 512 512">
-                                                <polyline points="112 184 256 328 400 184"
-                                                    style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
-                                            </svg>
-                                        </span>
-                                    </a>
-
-                                    <!--dropdown submenu-->
-                                    <ul class="block absolute ltr:left-full ltr:right-auto rtl:right-full rtl:left-auto transform border-t-2 border-blue-700 rounded rounded-t-none top-full z-50 py-0.5 ltr:text-left rtl:text-right -mt-11 ml-0 mr-0 bg-white dark:bg-gray-800 shadow-md"
-                                        style="min-width: 12rem" x-description="Dropdown menu" x-show="open"
-                                        role="menu" aria-orientation="vertical" aria-labelledby="submenu-02"
-                                        x-transition:enter="transition duration-200"
-                                        x-transition:enter-start="transform opacity-0 translate-y-4"
-                                        x-transition:enter-end="transform opacity-100 translate-y-0"
-                                        x-transition:leave="transition translate-y-4"
-                                        x-transition:leave-start="transform opacity-100 translate-y-0"
-                                        x-transition:leave-end="transform opacity-0 translate-y-4">
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="category.html">Category</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="category-list.html">Category list</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="search.html">Search</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="author.html">Author</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="single-post.html">Single post</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="full-width-post.html">Full width</a></li>
-                                    </ul>
-                                </li><!--end submenu-->
-
-                                <!--submenu-->
-                                <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false"
-                                    @mouseleave="open = false">
-                                    <a id="submenu-03"
-                                        class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                        href="javascript:;" @mouseenter="open = !open" aria-haspopup="true"
-                                        x-bind:aria-expanded="open"
-                                        :class="{ 'text-blue-700 dark:text-gray-100': open }">
-                                        Users
-                                        <!-- caret -->
-                                        <span class="inline-block ltr:float-right rtl:float-left mt-1 pt-1">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="transform ltr:-rotate-90 rtl:rotate-90" width=".8rem"
-                                                height=".8rem" fill="currentColor" viewBox="0 0 512 512">
-                                                <polyline points="112 184 256 328 400 184"
-                                                    style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
-                                            </svg>
-                                        </span>
-                                    </a>
-
-                                    <!--dropdown submenu-->
-                                    <ul class="block absolute ltr:left-full ltr:right-auto rtl:right-full rtl:left-auto transform border-t-2 border-blue-700 rounded rounded-t-none top-full z-50 py-0.5 ltr:text-left rtl:text-right -mt-11 ml-0 mr-0 bg-white dark:bg-gray-800 shadow-md"
-                                        style="min-width: 12rem" x-description="Dropdown menu" x-show="open"
-                                        role="menu" aria-orientation="vertical" aria-labelledby="submenu-03"
-                                        x-transition:enter="transition duration-200"
-                                        x-transition:enter-start="transform opacity-0 translate-y-4"
-                                        x-transition:enter-end="transform opacity-100 translate-y-0"
-                                        x-transition:leave="transition translate-y-4"
-                                        x-transition:leave-start="transform opacity-100 translate-y-0"
-                                        x-transition:leave-end="transform opacity-0 translate-y-4">
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="user-login.html">Login</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="user-register.html">Register</a></li>
-                                        <li><a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                                href="user-forgot.html">Forgot password</a></li>
-                                    </ul>
-                                </li><!--end submenu-->
-                            </ul>
-                        </li>
-
-                        <!-- dropdown -->
-                        <li class="relative" x-data="{ open: false }" @keydown.escape.stop="open = false"
-                            @mouseleave="open = false">
-                            <a id="dropdown-01"
-                                class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                href="javascript:;" @mouseenter="open = !open" aria-haspopup="true"
-                                x-bind:aria-expanded="open" :class="{ 'text-blue-700 dark:text-gray-100': open }">
-                                <span
-                                    class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"
-                                    :class="{ 'opacity-100': open }"></span>
-                                Docs
-                                <!-- caret -->
-                                <span class="inline-block ltr:ml-2 rtl:mr-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width=".8rem" height=".8rem"
-                                        fill="currentColor" viewBox="0 0 512 512">
-                                        <polyline points="112 184 256 328 400 184"
-                                            style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
-                                    </svg>
-                                </span>
-                            </a>
-                            <!-- dropdown menu -->
-                            <ul class="block absolute left-1/2 right-auto transform -translate-x-1/2 border-t-2 border-blue-700 rounded rounded-t-none top-full z-50 py-0.5 ltr:text-left rtl:text-right bg-white dark:bg-gray-800 shadow-md"
-                                style="min-width: 12rem;display:none" x-description="Dropdown menu" x-show="open"
-                                role="menu" aria-orientation="vertical" aria-labelledby="dropdown-01"
-                                x-transition:enter="transition duration-200"
-                                x-transition:enter-start="transform opacity-0 translate-y-4"
-                                x-transition:enter-end="transform opacity-100 translate-y-0"
-                                x-transition:leave="transition translate-y-4"
-                                x-transition:leave-start="transform opacity-100 translate-y-0"
-                                x-transition:leave-end="transform opacity-0 translate-y-4">
-                                <li class="relative">
-                                    <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                        href="docs//">Documentation</a>
-                                </li>
-                                <li class="relative">
-                                    <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                        href="docs/components/alerts.html">Components</a>
-                                </li>
-                                <li class="relative">
-                                    <a class="block w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                        href="docs/started/changelog.html">Changelog</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="relative">
-                            <a class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
-                                href="docs/support.html">
-                                <span
-                                    class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"></span>
-                                Support
-                            </a>
-                        </li> --}}
                     </ul>
 
                     <!-- button -->
                     <div class="grid text-center lg:block my-4 lg:my-auto">
                         <a class="py-2 px-4 text-sm inline-block text-center rounded-md leading-normal text-gray-100 bg-blue-700 border  hover:text-white hover:bg-blue-800 hover:ring-0  focus:bg-blue-800  focus:outline-none focus:ring-0"
                             rel="noopener" href="#contact" style="background-color: #1096bd">
-                            Obtenir un devis
+                            {{ __('message.devis') }}
                         </a>
                     </div>
                 </div><!-- end desktop menu -->
@@ -849,75 +277,82 @@
     <!-- =========={ MAIN }==========  -->
     <main id="content">
         <!-- =========={ HERO }==========  -->
-        <div id="hero" class="relative z-0 py-16 md:py-20">
-            <!-- bg wrapper -->
-            <div class="absolute inset-y-0 ltr:right-auto ltr:left-0 rtl:left-auto rtl:right-0 hidden lg:block w-1/3 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-20"
-                style="z-index:-1"></div>
-            <div class="absolute inset-x-0 bottom-auto top-0 block lg:hidden h-full w-1/2 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-20"
-                style="z-index:-1"></div>
+        <div id="hero" class="relative z-0 py-14 md:py-16 bg-white dark:bg-gray-800 overflow-hidden">
             <div class="container xl:max-w-6xl mx-auto px-4">
-                <div class="flex flex-wrap flex-row -mx-4 justify-center">
-                    <!-- content -->
-                    <div class="flex-shrink max-w-full px-4 w-full sm:w-9/12 lg:w-1/2 self-center">
-                        <img src="src/img-min/svg/creative.svg" class="w-full max-w-full h-auto"
-                            alt="creative agency">
-                    </div><!-- end content -->
-
-                    <!-- text -->
-                    <div class="flex-shrink max-w-full px-4 w-full md:w-9/12 lg:w-1/2 self-center lg:pr-12">
-                        <div class="text-center lg:ltr:text-left lg:rtl:text-right mt-6 lg:mt-0">
-                            <div class="mb-12">
-                                <h1
-                                    class="text-4xl leading-normal capitalize text-gray-800 dark:text-gray-100 font-semibold mb-4">
-                                    Nous sommes <span class="font-bold text-blue-700" style="color: #1096bd">une agence digitale</span>
-                                    spécialisée dans
-                                    <span data-toggle="typed"
-                                        data-options='{"strings": ["le design de logos", "le design web", "les applications mobiles"]}'></span>
-                                </h1>
-                                <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Nous vous
-                                    guiderons vers un horizon d'idées illimité et propulserons votre marque au cœur d'un
-                                    panorama global en constante évolution.</p>
+                <!-- row -->
+                <div class="flex flex-wrap flex-row -mx-4">
+                    <!-- hero content -->
+                    <div
+                        class="flex-shrink max-w-full px-4 w-full md:w-9/12 lg:w-1/2 self-center lg:ltr:pr-12 lg:rtl:pl-12">
+                        <div class="text-center lg:ltr:text-left lg:rtl:text-right mt-6 lg:mt-0 wow fadeInLeft"
+                            data-wow-duration="1s" data-wow-delay=".1s">
+                            <div class="mb-4">
+                                <span class="text-sm py-1 px-2 bg-blue-700 text-gray-100 rounded">100%</span>
+                                <span class="ml-1">{{ __('message.guarantee') }}</span>
                             </div>
-                            <a class="mt-2 py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-blue-700 border border-blue-700 hover:text-white hover:bg-blue-800 hover:ring-0 hover:border-blue-800 focus:bg-blue-800 focus:border-blue-800 focus:outline-none focus:ring-0 ltr:mr-4 rtl:ml-4" style="background-color: #1096bd; border-color: #1096bd"
-                                href="#service">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block mr-1" width="1.5rem"
-                                    height="1.5rem" fill="currentColor" viewBox="0 0 512 512">
-                                    <rect x="64" y="176" width="384" height="256" rx="28.87" ry="28.87"
-                                        style="fill:none;stroke:currentColor;stroke-linejoin:round;stroke-width:32px">
-                                    </rect>
-                                    <line x1="144" y1="80" x2="368" y2="80"
-                                        style="stroke:currentColor;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px">
-                                    </line>
-                                    <line x1="112" y1="128" x2="400" y2="128"
-                                        style="stroke:currentColor;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px">
-                                    </line>
-                                </svg>
-                                Nos Services
-                            </a>
-
-                            <a class="mt-2 py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-800 bg-gray-100 border border-gray-100 hover:text-gray-900 hover:bg-gray-200 hover:ring-0 hover:border-gray-200 focus:bg-gray-200 focus:border-gray-200 focus:outline-none focus:ring-0"
+                            <div class="mb-12">
+                                <h1 class="text-4xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">
+                                    <span class="text-blue-700 ">{{ __('message.role') }}</span> {{ __('message.what') }}
+                                </h1>
+                                <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">{{ __('message.mission') }}</p>
+                            </div>
+                            <a class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-blue-700 border border-blue-700 hover:text-white hover:bg-blue-800 hover:ring-0 hover:border-blue-800 focus:bg-blue-800 focus:border-blue-800 focus:outline-none focus:ring-0 mr-4"
                                 href="#portfolio">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block mr-1" width="1.5rem"
-                                    height="1.5rem" fill="currentColor" viewBox="0 0 512 512">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block ltr:mr-1 rtl:ml-1"
+                                    width="1.5rem" height="1.5rem" fill="currentColor" viewBox="0 0 512 512">
+                                    <polyline points="336 176 225.2 304 176 255.8"
+                                        style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
                                     <path
-                                        d="M304,384V360c0-29,31.54-56.43,52-76,28.84-27.57,44-64.61,44-108,0-80-63.73-144-144-144A143.6,143.6,0,0,0,112,176c0,41.84,15.81,81.39,44,108,20.35,19.21,52,46.7,52,76v24"
-                                        style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
-                                    <line x1="224" y1="480" x2="288" y2="480"
-                                        style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
-                                    <line x1="208" y1="432" x2="304" y2="432"
-                                        style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
-                                    <line x1="256" y1="384" x2="256" y2="256"
-                                        style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
-                                    <path d="M294,240s-21.51,16-38,16-38-16-38-16"
+                                        d="M463.1,112.37C373.68,96.33,336.71,84.45,256,48,175.29,84.45,138.32,96.33,48.9,112.37,32.7,369.13,240.58,457.79,256,464,271.42,457.79,479.3,369.13,463.1,112.37Z"
                                         style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
                                 </svg>
-                                Nos projets récents
+                                {{ __('message.uProjects') }}
+                            </a>
+                            <a class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-gray-900 border border-gray-900 hover:text-white hover:bg-black hover:ring-0 hover:border-black focus:bg-black focus:border-black focus:outline-none focus:ring-0"
+                                href="#service">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="inline-block ltr:mr-1 rtl:ml-1"
+                                    width="1.5rem" height="1.5rem" fill="currentColor" viewBox="0 0 512 512">
+                                    <rect x="64" y="176" width="384" height="256" rx="28.87" ry="28.87"
+                                        style="fill:none;stroke:currentColor;stroke-linejoin:round;stroke-width:32px" />
+                                    <line x1="144" y1="80" x2="368" y2="80"
+                                        style="stroke:currentColor;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+                                    <line x1="112" y1="128" x2="400" y2="128"
+                                        style="stroke:currentColor;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px" />
+                                </svg>
+                                {{ __('message.uServices') }}
                             </a>
                         </div>
                     </div>
-                </div>
+
+                    <!-- hero image -->
+                    <div class="flex-shrink max-w-full px-4 w-full md:w-9/12 lg:w-1/2 self-center">
+                        <div class="px-12 md:ltr:ml-16 md:ltr:pr-0 md:rtl:mr-16 md:rtl:pl-0 md:mt-0 wow fadeInRight"
+                            data-wow-duration="1s" data-wow-delay=".1s">
+                            <figure class="relative">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                                    <!-- Path back image-->
+                                    <path class="text-gray-100 dark:text-gray-900" fill="currentColor"
+                                        d="M51.2,-53.5C67.6,-47.4,82.7,-32.3,85.6,-15.2C88.6,2,79.2,21.2,67.7,37.2C56.2,53.3,42.5,66.2,26.7,70.8C11,75.4,-6.9,71.6,-19.6,63C-32.4,54.4,-40,41,-48.6,27.4C-57.2,13.9,-66.7,0.2,-68.1,-15.5C-69.5,-31.3,-62.8,-49.1,-50.1,-55.9C-37.5,-62.7,-18.7,-58.4,-0.6,-57.6C17.5,-56.9,34.9,-59.7,51.2,-53.5Z"
+                                        transform="translate(100 100)" />
+                                    <!-- Clip path image -->
+                                    <defs>
+                                        <clipPath id="svg-mask1">
+                                            <path fill="currentColor"
+                                                d="M39.2,-57.5C49.8,-46.3,56.6,-33.5,62.7,-19.3C68.7,-5.2,73.9,10.3,71.6,25C69.2,39.8,59.3,53.9,46.1,58C32.9,62.2,16.5,56.3,1.2,54.7C-14.2,53.1,-28.3,55.8,-42.1,51.9C-56,48,-69.5,37.5,-68.6,25.7C-67.7,14,-52.3,1,-45.9,-13.6C-39.4,-28.2,-41.7,-44.5,-35.6,-57.1C-29.4,-69.7,-14.7,-78.7,-0.2,-78.4C14.3,-78.1,28.6,-68.6,39.2,-57.5Z"
+                                                transform="translate(100 100)" />
+                                        </clipPath>
+                                    </defs>
+                                    <!-- Source image -->
+                                    <image transform="matrix(1 0 0 1 0 0)" clip-path="url(#svg-mask1)"
+                                        xlink:href="src/img-min/human/hero-agency.jpg" width="235" height="200">
+                                    </image>
+                                </svg>
+                            </figure>
+                        </div>
+                    </div>
+                </div><!-- end row -->
             </div>
-        </div><!-- end Hero -->
+        </div><!-- end hero -->
 
         <!-- =========={ ABOUT}==========  -->
         <div id="about" class="relative z-0 py-20 lg:py-24 bg-white dark:bg-gray-800">
@@ -937,15 +372,12 @@
                         <div
                             class="p-6 md:p-12 lg:p-16 lg:ltr:pl-0 text-center lg:ltr:text-left lg:rtl:pr-0 lg:rtl:text-right">
                             <h2 class="text-4xl leading-normal mb-4 font-semibold text-gray-800 dark:text-gray-100">
-                                <span class="text-blue-700" style="color: #1096bd">Transformez vos idées en réalité
-                                    digitale</span>
+                                <span class="text-blue-700"
+                                    style="color: #1096bd">{{ __('message.aboutTitle') }}</span>
                             </h2>
                             <p class="text-gray-500 leading-relaxed font-light text-md mx-auto pb-2 text-justify"
                                 style="text-align: justify;">
-                                Chez BinaryBloom, nous sommes passionnés par l'innovation digitale et dédiés à offrir
-                                des solutions sur mesure pour répondre à vos besoins spécifiques. Fort de ses 7 ans
-                                d'expérience, Binary Bloom est une équipe dynamique de professionnels spécialisés dans
-                                le développement web, mobile et le marketing digital.
+                                {{ __('message.aboutText') }}
                             </p>
                         </div>
                     </div>
@@ -1010,11 +442,11 @@
                 <!-- section header -->
                 <header class="text-center mx-auto mb-12">
                     <h2 class="text-2xl md:text-3xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">
-                        <span class="font-light">Nos</span> Services
+                        <span class="font-light">{{ __('message.u') }}</span> {{ __('message.service') }}
                     </h2>
                     <hr class="block w-12 h-0.5 mx-auto my-5 bg-blue-700 border-blue-700">
                     <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">
-                        Nous offrons un service de qualité supérieure pour répondre efficacement à vos besoins
+                        {{ __('message.offer') }}
                     </p>
                 </header><!-- end section header -->
 
@@ -1038,7 +470,7 @@
                             </div>
                             <h3 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">Logo
                                 Design</h3>
-                            <p>Optez pour une identité visuelle distinctive et mémorable</p>
+                            <p>{{ __('message.s1') }}</p>
                         </div>
                         <!-- end service block -->
                     </div>
@@ -1058,8 +490,8 @@
                                 </svg>
                             </div>
                             <h3 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">Web
-                                Design</h3>
-                            <p>Optimisez votre présence en ligne avec un site internet</p>
+                                Design/Development</h3>
+                            <p>{{ __('message.s2') }}</p>
                         </div>
                         <!-- end service block -->
                     </div>
@@ -1080,8 +512,8 @@
                                 </svg>
                             </div>
                             <h3 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">App
-                                Design</h3>
-                            <p>Améliorez l'engagement des utilisateurs et facilitez l'accès aux services</p>
+                                Design/Development</h3>
+                            <p>{{ __('message.s3') }}</p>
                         </div>
                         <!-- end service block -->
                     </div>
@@ -1102,8 +534,8 @@
 
                             </div>
                             <h3 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">
-                                Marketing Digitale</h3>
-                            <p>Ciblez éfficacement votre audience et en générez une croissance stratégique</p>
+                                {{ __('SEO') }}</h3>
+                            <p>{{ __('message.s4') }}</p>
                         </div>
                         <!-- end service block -->
                     </div>
@@ -1125,8 +557,8 @@
 
                             </div>
                             <h3 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">
-                                Communication Digitale</h3>
-                            <p>Amplifiez votre visibilité et renforcez l'engagement de vos clients</p>
+                                {{ __('message.digMark') }}</h3>
+                            <p>{{ __('message.s5') }}</p>
                         </div>
                         <!-- end service block -->
                     </div>
@@ -1152,7 +584,7 @@
                             </div>
                             <h3 class="text-lg leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">
                                 Graphic Design</h3>
-                            <p>Renforcez l'impact visuel et la reconnaissance de votre marque</p>
+                            <p>{{ __('message.s6') }}</p>
                         </div>
                         <!-- end service block -->
                     </div>
@@ -1166,7 +598,7 @@
                 <!-- section header -->
                 <header class="text-center mx-auto mb-12">
                     <h2 class="text-2xl md:text-3xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">
-                        <span class="font-light">Nos</span> Projets
+                        <span class="font-light">{{ __('message.u') }}</span> {{ __('message.project') }}
                     </h2>
                     <hr class="block w-12 h-0.5 mx-auto my-5 bg-blue-700 border-blue-700">
                 </header><!-- end section header -->
@@ -1175,7 +607,7 @@
                 <div class="space-x-5 text-center">
                     <button @click.prevent="tab = 'all'" :class="{ 'text-blue-700': tab === 'all' }"
                         class="inline-block  bg-transparent border-0 outline-none mb-6 md:mb-12 focus:text-blue-700 focus:ring-0 focus:outline-none text-blue-700">
-                        Tout
+                        {{ __('message.all') }}
                     </button>
 
                     <button @click.prevent="tab = 'web'" :class="{ 'text-blue-700': tab === 'web' }"
@@ -1204,10 +636,12 @@
                             <img class="block w-full h-auto transform duration-500 hover:scale-125"
                                 src="{{ asset('assets/img/portfolio/ndoumbi.PNG') }}" alt="Image Description">
                             <figcaption
-                                class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center" style="background-color: #1096bd;">
+                                class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center"
+                                style="background-color: #1096bd;">
                                 <h3 class="text-base leading-normal font-semibold my-1 text-gray-100">Ndoumbi - Conseil
                                     numérique</h3>
-                                <small class="d-block"> <a href="https://ndoumbi.com/">Voir le site</a> </small>
+                                <small class="d-block"> <a href="https://ndoumbi.com/">{{ __('message.show') }}</a>
+                                </small>
                             </figcaption>
                         </div>
                     </figure>
@@ -1220,11 +654,13 @@
                             <img class="block w-full h-auto transform duration-500 hover:scale-125"
                                 src="{{ asset('assets/img/portfolio/traiteurlocal.PNG') }}" alt="Image Description">
                             <figcaption
-                                class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center" style="background-color: #1096bd;">
+                                class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center"
+                                style="background-color: #1096bd;">
                                 <h3 class="text-base leading-normal font-semibold my-1 text-gray-100">Traiteur Local -
                                     Plateforme culinaire
                                 </h3>
-                                <small class="d-block"> <a href="https://traiteurlocal.fr/">Voir le site</a> </small>
+                                <small class="d-block"> <a
+                                        href="https://traiteurlocal.fr/">{{ __('message.show') }}</a> </small>
                             </figcaption>
                         </div>
                     </figure>
@@ -1237,11 +673,13 @@
                             <img class="block w-full h-auto transform duration-500 hover:scale-125"
                                 src="{{ asset('assets/img/portfolio/motemaxx.PNG') }}" alt="Image Description">
                             <figcaption
-                                class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center" style="background-color: #1096bd;">
+                                class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center"
+                                style="background-color: #1096bd;">
                                 <h3 class="text-base leading-normal font-semibold my-1 text-gray-100">Institut de
                                     beauté Motemaxx
                                 </h3>
-                                <small class="d-block"> <a href="https://institut-motemaxx.com/">Voir le site</a>
+                                <small class="d-block"> <a
+                                        href="https://institut-motemaxx.com/">{{ __('message.show') }}</a>
                                 </small>
                             </figcaption>
                         </div>
@@ -1255,10 +693,12 @@
                             <img class="block w-full h-auto transform duration-500 hover:scale-125"
                                 src="{{ asset('assets/img/portfolio/avisclient.PNG') }}" alt="Image Description">
                             <figcaption
-                                class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center" style="background-color: #1096bd;">
+                                class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center"
+                                style="background-color: #1096bd;">
                                 <h3 class="text-base leading-normal font-semibold my-1 text-gray-100">Avis Client Pro
                                 </h3>
-                                <small class="d-block"> <a href="https://avisclientpro.com/">Voir le site</a> </small>
+                                <small class="d-block"> <a
+                                        href="https://avisclientpro.com/">{{ __('message.show') }}</a> </small>
                             </figcaption>
                         </div>
                     </figure>
@@ -1271,10 +711,11 @@
                             <img class="block h-full mx-auto w-autotransform duration-500 hover:scale-125"
                                 src="{{ asset('assets/img/portfolio/brain.jpg') }}" alt="Image Description">
                             <figcaption
-                                class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center" style="background-color: #1096bd;">
+                                class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center"
+                                style="background-color: #1096bd;">
                                 <h3 class="text-base leading-normal font-semibold my-1 text-gray-100">Brain - AI Search
                                 </h3>
-                                <small class="d-block"> <a href="">Télécharger l'application</a> </small>
+                                <small class="d-block"> <a href="">{{ __('message.download') }}</a> </small>
                             </figcaption>
                         </div>
                     </figure>
@@ -1287,11 +728,12 @@
                             <img class="block h-full mx-auto w-autotransform duration-500 hover:scale-125"
                                 src="{{ asset('assets/img/portfolio/plonge.jpg') }}" alt="Image Description">
                             <figcaption
-                                class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center" style="background-color: #1096bd;">
+                                class="absolute inset-x-0 bottom-0 h-20 transition-opacity duration-500 ease-in opacity-0 group-hover:opacity-100 overflow-hidden px-4 py-2 text-gray-100 bg-blue-700 text-center"
+                                style="background-color: #1096bd;">
                                 <h3 class="text-base leading-normal font-semibold my-1 text-gray-100">Plongée Sous
                                     Marine
                                 </h3>
-                                <small class="d-block"> <a href="">Télécharger l'application</a> </small>
+                                <small class="d-block"> <a href="">{{ __('message.download') }}</a> </small>
                             </figcaption>
                         </div>
                     </figure>
@@ -1303,8 +745,8 @@
                 <div class="flex flex-wrap flex-row -mx-4">
                     <div class="w-full px-4 text-center mt-6">
                         <a href="#"
-                            class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-blue-700 border border-blue-700 hover:text-white hover:bg-blue-800 hover:ring-0 hover:border-blue-800 focus:bg-blue-800 focus:border-blue-800 focus:outline-none focus:ring-0" style="background-color: #1096bd; border-color: #1096bd">Voir
-                            tous nos projets</a>
+                            class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-blue-700 border border-blue-700 hover:text-white hover:bg-blue-800 hover:ring-0 hover:border-blue-800 focus:bg-blue-800 focus:border-blue-800 focus:outline-none focus:ring-0"
+                            style="background-color: #1096bd; border-color: #1096bd">{{ __('message.more') }}</a>
                     </div>
                 </div>
             </div>
@@ -1316,11 +758,12 @@
                 <!-- section header -->
                 <header class="text-center mx-auto mb-12">
                     <h2 class="text-2xl md:text-3xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">
-                        <span class="font-light">Témoignages</span> Clients
+                        <span class="font-light">{{ __('message.testimonials') }}</span>
                     </h2>
-                    <hr class="block w-12 h-0.5 mx-auto my-5 bg-blue-700 border-blue-700" style="background-color: #1096bd; border-color: #1096bd">
-                    <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">Ne croyez pas nos paroles,
-                        regardez ce que les gens disent!</p>
+                    <hr class="block w-12 h-0.5 mx-auto my-5 bg-blue-700 border-blue-700"
+                        style="background-color: #1096bd; border-color: #1096bd">
+                    <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">
+                        {{ __('message.testimonyText') }}</p>
                 </header><!-- end section header -->
 
                 <!-- row -->
@@ -1394,10 +837,7 @@
                                                     <!-- <i class="fa fa-star"></i> -->
                                                 </li>
                                             </ul>
-                                            <p class="text-gray-500">BinaryBloom a développé des fonctionnalités
-                                                fantastiques.
-                                                Ils soutiennent notre marque, réduisent le temps de production des
-                                                travaux écrits et sont super.</p>
+                                            <p class="text-gray-500">{{ __('message.t1') }}</p>
                                         </blockquote>
                                     </div>
                                 </div><!-- End Reviews -->
@@ -1468,11 +908,7 @@
                                                     <!-- <i class="fa fa-star"></i> -->
                                                 </li>
                                             </ul>
-                                            <p class="text-gray-500">
-                                                Excellente équipe avec qui travailler, très accessible et toujours en
-                                                mesure de répondre à toutes nos questions concernant le travail du
-                                                projet.
-                                            </p>
+                                            <p class="text-gray-500">{{ __('message.t2') }}</p>
                                         </blockquote>
                                     </div>
                                 </div><!-- End Reviews -->
@@ -1543,11 +979,7 @@
                                                     <!-- <i class="fa fa-star"></i> -->
                                                 </li>
                                             </ul>
-                                            <p class="text-gray-500">Merci beaucoup pour votre travail sur la
-                                                conception de notre logo
-                                                et le développement de notre site Web. Ils nous ont vraiment aidés à
-                                                arriver là où il faut.
-                                            </p>
+                                            <p class="text-gray-500">{{ __('message.t3') }}</p>
                                         </blockquote>
                                     </div>
                                 </div><!-- End Reviews -->
@@ -1566,13 +998,14 @@
                         <div class="contact-area w-100 p-4">
                             <h3
                                 class="text-2xl leading-normal font-semibold text-gray-800 dark:text-gray-100 mb-12 text-center">
-                                Contactez Nous</h3>
+                                {{ __('message.contactUs') }}</h3>
                             <!-- contact form -->
                             <form action="{{ route('contact.store') }}" method="post">
                                 @csrf
                                 <div class="flex flex-wrap flex-row -mx-4">
                                     <div class="flex-shrink w-full max-w-full md:w-1/2 px-4 mb-6">
-                                        <label class="inline-block mb-2" for="name">Nom</label>
+                                        <label class="inline-block mb-2"
+                                            for="name">{{ __('message.name') }}</label>
                                         <input type="text" name="name" required
                                             class="w-full leading-5 relative py-3 px-5 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                                             id="name">
@@ -1587,7 +1020,8 @@
                                     </div>
                                 </div>
                                 <div class="mb-6">
-                                    <label class="inline-block mb-2" for="subject">Objet</label>
+                                    <label class="inline-block mb-2"
+                                        for="subject">{{ __('message.object') }}</label>
                                     <input type="text" required
                                         class="w-full leading-5 relative py-3 px-5 rounded text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
                                         name="subject" id="subject">
@@ -1602,8 +1036,8 @@
                                 </div>
                                 <div class="text-center mb-6">
                                     <button
-                                        class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-blue-700 border border-blue-700 hover:text-white hover:bg-blue-800 hover:ring-0 hover:border-blue-800 focus:bg-blue-800 focus:border-blue-800 focus:outline-none focus:ring-0" style="background-color: #1096bd; border-color: #1096bd"
-                                        type="submit">
+                                        class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-blue-700 border border-blue-700 hover:text-white hover:bg-blue-800 hover:ring-0 hover:border-blue-800 focus:bg-blue-800 focus:border-blue-800 focus:outline-none focus:ring-0"
+                                        style="background-color: #1096bd; border-color: #1096bd" type="submit">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem"
                                             fill="currentColor"
                                             class="ltr:mr-2 rtl:ml-2 inline-block transform ltr:rotate-0 rtl:-rotate-90"
@@ -1616,29 +1050,12 @@
                                                 style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px">
                                             </line>
                                         </svg>
-                                        Envoyer
+                                        {{ __('message.send') }}
                                     </button>
                                 </div>
                             </form><!-- end contact form -->
                         </div>
                     </div>
-
-                    {{-- <div class="flex-shrink max-w-full px-4 w-full">
-                        <div class="p-6">
-                            <h3 class="text-2xl leading-normal font-semibold text-gray-800 mb-12 text-center">Our Maps
-                            </h3>
-                            <!-- maps responsive -->
-                            <div class="relative overflow-hidden mb-6" style="padding-bottom: 75%">
-                                <iframe class="absolute top-0 left-0 w-full h-full lazy"
-                                    data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1537389.2000627194!2d-105.93786665117793!3d41.18442046635789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sid!4v1585008753367!5m2!1sen!2sid"
-                                    aria-label="Google maps" width="800" height="600" style="border:0;"
-                                    allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                            </div><!-- end maps responsive -->
-                            <p class="mb-4"><b>Horaires</b>: Lundi - Samedi: 09:00 - 17:00 </p>
-                            <p class="mb-4"><b>Phone Number</b>: +1 234 5678 90</p>
-                            <p class="mb-4"><b>Email</b>: contact@binarybloom.tech</p>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </div><!-- End contact -->
@@ -1652,7 +1069,7 @@
                 <div class="flex-shrink max-w-full w-full lg:w-1/3 px-4 mb-7 lg:mb-0">
                     <!-- Footer Content -->
                     <div class="leading-relaxed">
-                        <h4 class="font-semibold text-xl mb-6 text-gray-200">A Propos</h4>
+                        <h4 class="font-semibold text-xl mb-6 text-gray-200">{{ __('message.about') }}</h4>
                         {{-- <p class="mb-3">Tailwind template designer, we build web templates, themes and other
                             goodies, putting a lot of love in every pixel and design.</p> --}}
                         <p class="mb-3">
@@ -1695,30 +1112,20 @@
                 <div class="flex-shrink max-w-full w-full lg:w-1/3 px-4 mb-7 lg:mb-0">
                     <!-- Footer Content -->
                     <div class="leading-relaxed">
-                        <h4 class="font-semibold text-xl mb-6 text-gray-200">Liens</h4>
+                        <h4 class="font-semibold text-xl mb-6 text-gray-200">{{ __('message.link') }}</h4>
                         <div class="flex flex-wrap flex-row -mx-4">
                             <div class="flex-shrink max-w-full w-1/2 px-4">
                                 <ul class="space-y-2">
-                                    <li><a class="hover:text-gray-100" href="#about">A propos</a>
+                                    <li><a class="hover:text-gray-100" href="#about">{{ __('message.about') }}</a>
                                     </li>
                                     <li><a class="hover:text-gray-100" href="#contact">Contact</a></li>
                                     <li><a class="hover:text-gray-100" href="#">Privacy policy</a></li>
-                                    <li><a class="hover:text-gray-100" href="#">Conditions d'utilisation</a>
+                                    <li><a class="hover:text-gray-100" href="#">CGU</a>
                                     </li>
                                     <li><a class="hover:text-gray-100" href="#">GDPR</a></li>
                                     {{-- <li><a class="hover:text-gray-100" href="career.html">Career</a></li> --}}
                                 </ul>
                             </div>
-                            {{-- <div class="flex-shrink max-w-full w-1/2 px-4">
-                                <ul class="space-y-2">
-                                    <li><a class="hover:text-gray-100" href="#">Latest post</a></li>
-                                    <li><a class="hover:text-gray-100" href="#">Popular post</a></li>
-                                    <li><a class="hover:text-gray-100" href="#">Blogs</a></li>
-                                    <li><a class="hover:text-gray-100" href="#">Events</a></li>
-                                    <li><a class="hover:text-gray-100" href="fax.html">Fax</a></li>
-                                    <li><a class="hover:text-gray-100" href="category.html">Category</a></li>
-                                </ul>
-                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -1728,9 +1135,7 @@
                     <!-- Footer Content -->
                     <div class="leading-relaxed">
                         <h4 class="font-semibold text-xl mb-6 text-gray-200">Newsletter</h4>
-                        <p class="mb-6">Abonnez-vous à notre liste de diffusion pour recevoir des mises à jour
-                            quotidiennes directement sur votre
-                            boîte de réception !</p>
+                        <p class="mb-6">{{ __('message.news') }}</p>
                         <!--form-->
                         <div class="mx-auto mb-7">
                             <form method="post" id="subscribe" class="relative" action="{{ route('subscribe') }}">
@@ -1743,8 +1148,9 @@
                                         aria-label="subcribe newsletter">
                                     <div class="flex -mr-px">
                                         <button
-                                            class="flex items-center py-3 px-5 -ml-1 ltr:rounded-r-md rtl:rounded-l-md leading-5 text-gray-100 bg-blue-700 border border-blue-700 hover:text-white hover:bg-blue-800 hover:ring-0 hover:border-blue-800 focus:bg-blue-800 focus:border-blue-800 focus:outline-none focus:ring-0" style="background-color: #1096bd; border-color: #1096bd"
-                                            type="submit">Souscrire</button>
+                                            class="flex items-center py-3 px-5 -ml-1 ltr:rounded-r-md rtl:rounded-l-md leading-5 text-gray-100 bg-blue-700 border border-blue-700 hover:text-white hover:bg-blue-800 hover:ring-0 hover:border-blue-800 focus:bg-blue-800 focus:border-blue-800 focus:outline-none focus:ring-0"
+                                            style="background-color: #1096bd; border-color: #1096bd"
+                                            type="submit">{{ __('message.subscribe') }}</button>
                                     </div>
                                 </div>
                             </form>
