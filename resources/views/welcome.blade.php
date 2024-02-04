@@ -113,12 +113,89 @@
                                                 class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">{{ __('message.about') }}</a>
                                         </li>
                                         <li class="relative">
+                                            <a href="/#service"
+                                                class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">{{ __('message.service') }}</a>
+                                        </li>
+                                        <li class="relative">
                                             <a href="/#portfolio"
                                                 class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">{{ __('message.portfolio') }}</a>
                                         </li>
                                         <li class="relative">
                                             <a href="/#contact"
                                                 class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">{{ __('message.contact') }}</a>
+                                        </li>
+                                        <li class="relative" x-data="{ open: false }"
+                                            @keydown.escape.stop="open = false" @mouseleave="open = false">
+                                            <a id="dropdown-mega"
+                                                class="group block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
+                                                href="javascript:;" @mouseenter="open = !open" aria-haspopup="true"
+                                                x-bind:aria-expanded="open"
+                                                :class="{ 'text-blue-700 dark:text-gray-100': open }">
+                                                <span
+                                                    class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"
+                                                    :class="{ 'opacity-100': open }"></span>
+                                                {{ __('message.language') }}
+                                                <!-- caret -->
+                                                <span class="inline-block ltr:ml-2 rtl:mr-2">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width=".8rem"
+                                                        height=".8rem" fill="currentColor" viewBox="0 0 512 512">
+                                                        <polyline points="112 184 256 328 400 184"
+                                                            style="fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px" />
+                                                    </svg>
+                                                </span>
+                                            </a>
+
+                                            <!-- dropdown menu -->
+                                            <div class=""
+                                                style="min-width: 38rem; display:none" x-description="Dropdown menu"
+                                                x-show="open" role="menu" aria-orientation="vertical"
+                                                aria-labelledby="dropdown-mega"
+                                                x-transition:enter="transition duration-200"
+                                                x-transition:enter-start="transform opacity-0 translate-y-4"
+                                                x-transition:enter-end="transform opacity-100 translate-y-0"
+                                                x-transition:leave="transition translate-y-4"
+                                                x-transition:leave-start="transform opacity-100 translate-y-0"
+                                                x-transition:leave-end="transform opacity-0 translate-y-4">
+                                                <div class="flex flex-wrap flex-row text-center">
+                                                    <div class="flex-shrink w-full z-50 px-4">
+                                                        <div class="py-5">
+                                                            <form action="{{ route('lang') }}" method="post">
+                                                                @csrf
+                                                                <input type="hidden" name="lang" value="fr">
+                                                                <button type="submit"
+                                                                    class="flex items-center w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">
+                                                                    <div
+                                                                        class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 rounded">
+                                                                        <img class="w-8"
+                                                                            src="{{ asset('assets/img/fr.png') }}"
+                                                                            alt="fr">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <p class="">Francais</p>
+                                                                    </div>
+                                                                </button>
+                                                            </form>
+
+                                                            <form action="{{ route('lang') }}" method="post">
+                                                                @csrf
+                                                                <input type="hidden" name="lang" value="en">
+                                                                <button type="submit"
+                                                                    class="flex items-center w-full py-2 px-6 clear-both whitespace-nowrap hover:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">
+                                                                    <div
+                                                                        class="self-center ltr:mr-3 rtl:ml-3 py-2 px-3 rounded">
+                                                                        <img class="w-8"
+                                                                            src="{{ asset('assets/img/en.png') }}"
+                                                                            alt="en">
+                                                                    </div>
+                                                                    <div class="">
+                                                                        <p class="">English</p>
+                                                                    </div>
+                                                                </button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </li>
                                     </ul>
                                 </nav>
@@ -287,17 +364,21 @@
                         <div class="text-center lg:ltr:text-left lg:rtl:text-right mt-6 lg:mt-0 wow fadeInLeft"
                             data-wow-duration="1s" data-wow-delay=".1s">
                             <div class="mb-4">
-                                <span class="text-sm py-1 px-2 bg-blue-700 text-gray-100 rounded">100%</span>
+                                <span class="text-sm py-1 px-2 bg-blue-700 text-gray-100 rounded"
+                                    style="background-color: #1096bd">100%</span>
                                 <span class="ml-1">{{ __('message.guarantee') }}</span>
                             </div>
                             <div class="mb-12">
                                 <h1 class="text-4xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">
-                                    <span class="text-blue-700 ">{{ __('message.role') }}</span> {{ __('message.what') }}
+                                    <span class="text-blue-700 "
+                                        style="color: #1096bd">{{ __('message.role') }}</span>
+                                    {{ __('message.what') }}
                                 </h1>
-                                <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">{{ __('message.mission') }}</p>
+                                <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">
+                                    {{ __('message.mission') }}</p>
                             </div>
-                            <a class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-blue-700 border border-blue-700 hover:text-white hover:bg-blue-800 hover:ring-0 hover:border-blue-800 focus:bg-blue-800 focus:border-blue-800 focus:outline-none focus:ring-0 mr-4"
-                                href="#portfolio">
+                            <a class="my-3 py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-blue-700 border border-blue-700 hover:text-white hover:bg-blue-800 hover:ring-0 hover:border-blue-800 focus:bg-blue-800 focus:border-blue-800 focus:outline-none focus:ring-0 mr-4"
+                                href="#portfolio" style="background-color: #1096bd">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="inline-block ltr:mr-1 rtl:ml-1"
                                     width="1.5rem" height="1.5rem" fill="currentColor" viewBox="0 0 512 512">
                                     <polyline points="336 176 225.2 304 176 255.8"
@@ -308,7 +389,7 @@
                                 </svg>
                                 {{ __('message.uProjects') }}
                             </a>
-                            <a class="py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-gray-900 border border-gray-900 hover:text-white hover:bg-black hover:ring-0 hover:border-black focus:bg-black focus:border-black focus:outline-none focus:ring-0"
+                            <a class="my-3 py-3 px-5 inline-block text-center rounded-md leading-normal text-gray-100 bg-gray-900 border border-gray-900 hover:text-white hover:bg-black hover:ring-0 hover:border-black focus:bg-black focus:border-black focus:outline-none focus:ring-0"
                                 href="#service">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="inline-block ltr:mr-1 rtl:ml-1"
                                     width="1.5rem" height="1.5rem" fill="currentColor" viewBox="0 0 512 512">
@@ -325,7 +406,7 @@
                     </div>
 
                     <!-- hero image -->
-                    <div class="flex-shrink max-w-full px-4 w-full md:w-9/12 lg:w-1/2 self-center">
+                    <div class="hidden md:block flex-shrink max-w-full px-4 w-full md:w-9/12 lg:w-1/2 self-center">
                         <div class="px-12 md:ltr:ml-16 md:ltr:pr-0 md:rtl:mr-16 md:rtl:pl-0 md:mt-0 wow fadeInRight"
                             data-wow-duration="1s" data-wow-delay=".1s">
                             <figure class="relative">
