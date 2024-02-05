@@ -146,10 +146,9 @@
                                             </a>
 
                                             <!-- dropdown menu -->
-                                            <div class=""
-                                                style="min-width: 38rem; display:none" x-description="Dropdown menu"
-                                                x-show="open" role="menu" aria-orientation="vertical"
-                                                aria-labelledby="dropdown-mega"
+                                            <div class="" style="min-width: 38rem; display:none"
+                                                x-description="Dropdown menu" x-show="open" role="menu"
+                                                aria-orientation="vertical" aria-labelledby="dropdown-mega"
                                                 x-transition:enter="transition duration-200"
                                                 x-transition:enter-start="transform opacity-0 translate-y-4"
                                                 x-transition:enter-end="transform opacity-100 translate-y-0"
@@ -672,6 +671,111 @@
                 </div><!-- end row -->
             </div>
         </div><!-- End services -->
+
+        <!-- =========={ COLLABORATION }==========  -->
+        <div id="service"
+            class="relative pt-20 pb-8 md:pt-24 md:pb-12 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-20">
+            <div class="container xl:max-w-6xl mx-auto px-4">
+                <!-- section header -->
+                <header class="text-center mx-auto mb-12 lg:px-20">
+                    <h2 class="text-2xl md:text-3xl leading-normal mb-2 font-bold text-gray-800 dark:text-gray-100">
+                        <span class="font-light">{{ __('message.ur') }}</span> Collaboration
+                    </h2>
+                    <hr class="block w-12 h-0.5 mx-auto my-5 bg-blue-700 border-blue-700">
+                    <p class="text-gray-500 leading-relaxed font-light text-xl mx-auto pb-2">
+                        {{ __('message.collaboration_text') }}
+                    </p>
+                </header><!-- end section header -->
+
+                <!-- row -->
+                <div class="flex flex-wrap flex-row -mx-4">
+                    <div class="lex-shrink max-w-full px-4 w-full md:w-1/2 lg:w-1/3 lg:px-6">
+                        <!-- features block -->
+                        <div class="relative p-6 bg-white dark:bg-gray-800 mb-12 rounded shadow hover:shadow-xl transform transition duration-300 ease-in-out hover:-translate-y-2 wow fadeInUp"
+                            data-wow-duration="1s">
+                            <div class="absolute top-6 right-0 mx-2 max-w-24 text-center z-0">
+                                <img src="{{ asset('assets/img/1.svg') }}" class="w-8 h-8" alt="1">
+                            </div>
+                            <div class="ltr:pr-11 rtl:pl-11">
+                                <h3 class="text-xl leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">
+                                    {{ __('message.c1_title') }}
+                                </h3>
+                                <p>{{ __('message.c1') }}</p>
+                            </div>
+                            <div class="w-24 h-1 mt-4 bg-opacity-70 bg-blue-700"></div>
+                        </div><!-- end features block -->
+                    </div>
+
+                    <div class="lex-shrink max-w-full px-4 w-full md:w-1/2 lg:w-1/3 lg:px-6">
+                        <!-- features block -->
+                        <div class="relative p-6 bg-white dark:bg-gray-800 mb-12 rounded shadow hover:shadow-xl transform transition duration-300 ease-in-out hover:-translate-y-2 wow fadeInUp"
+                            data-wow-duration="1s" data-wow-delay=".1s">
+                            <div class="absolute top-6 right-0 mx-2 max-w-24 text-center z-0">
+                                <img src="{{ asset('assets/img/2.svg') }}" class="w-8 h-8" alt="1">
+                            </div>
+                            <div class="ltr:pr-11 rtl:pl-11">
+                                <h3 class="text-xl leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">
+                                    {{ __('message.c2_title') }}
+                                </h3>
+                                <p>{{ __('message.c2') }}</p>
+                            </div>
+                            <div class="w-24 h-1 mt-4 bg-opacity-70 bg-blue-700"></div>
+                        </div><!-- end features block -->
+                    </div>
+
+                    <div class="lex-shrink max-w-full px-4 w-full md:w-1/2 lg:w-1/3 lg:px-6">
+                        <!-- features block -->
+                        <div class="relative p-6 bg-white dark:bg-gray-800 mb-12 rounded shadow hover:shadow-xl transform transition duration-300 ease-in-out hover:-translate-y-2 wow fadeInUp"
+                            data-wow-duration="1s" data-wow-delay=".3s">
+                            <div class="absolute top-6 right-0 mx-2 max-w-24 text-center z-0">
+                                <img src="{{ asset('assets/img/3.svg') }}" class="w-8 h-8" alt="1">
+                            </div>
+                            <div class="ltr:pr-11 rtl:pl-11">
+                                <h3 class="text-xl leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">
+                                    {{ __('message.c3_title') }}
+                                </h3>
+                                <p>{{ __('message.c3') }}</p>
+                            </div>
+                            <div class="w-24 h-1 mt-4 bg-opacity-70 bg-blue-700"></div>
+                        </div><!-- end features block -->
+                    </div>
+
+                    <div class="lex-shrink max-w-full px-4 w-full md:w-1/2 lg:w-1/3 lg:px-6">
+                        <!-- features block -->
+                        <div class="relative p-6 bg-white dark:bg-gray-800 mb-12 rounded shadow hover:shadow-xl transform transition duration-300 ease-in-out hover:-translate-y-2 wow fadeInUp"
+                            data-wow-duration="1s">
+                            <div class="absolute top-6 right-0 mx-2 max-w-24 text-center z-0">
+                                <img src="{{ asset('assets/img/4.svg') }}" class="w-8 h-8" alt="1">
+                            </div>
+                            <div class="ltr:pr-11 rtl:pl-11">
+                                <h3 class="text-xl leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">
+                                    {{ __('message.c4_title') }}
+                                </h3>
+                                <p>{{ __('message.c4') }}</p>
+                            </div>
+                            <div class="w-24 h-1 mt-4 bg-opacity-70 bg-blue-700"></div>
+                        </div><!-- end features block -->
+                    </div>
+
+                    <div class="lex-shrink max-w-full px-4 w-full md:w-1/2 lg:w-1/3 lg:px-6">
+                        <!-- features block -->
+                        <div class="relative p-6 bg-white dark:bg-gray-800 mb-12 rounded shadow hover:shadow-xl transform transition duration-300 ease-in-out hover:-translate-y-2 wow fadeInUp"
+                            data-wow-duration="1s" data-wow-delay=".1s">
+                            <div class="absolute top-6 right-0 mx-2 max-w-24 text-center z-0">
+                                <img src="{{ asset('assets/img/5.svg') }}" class="w-8 h-8" alt="1">
+                            </div>
+                            <div class="ltr:pr-11 rtl:pl-11">
+                                <h3 class="text-xl leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">
+                                    {{ __('message.c5_title') }}
+                                </h3>
+                                <p>{{ __('message.c5') }}</p>
+                            </div>
+                            <div class="w-24 h-1 mt-4 bg-opacity-70 bg-blue-700"></div>
+                        </div><!-- end features block -->
+                    </div>
+                </div><!-- end row -->
+            </div>
+        </div><!-- End Collaboration -->
 
         <!-- =========={ PORTFOLIO }==========  -->
         <div id="portfolio" class="relative py-20 md:py-24 bg-white dark:bg-gray-800">
@@ -1343,7 +1447,8 @@
         aria-label="Scroll To Top">
         <svg width="1rem" height="1rem" viewBox="0 0 16 16" fill="currentColor"
             xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v9a.5.5 0 01-1 0V4a.5.5 0 01.5-.5z" clip-rule="evenodd">
+            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v9a.5.5 0 01-1 0V4a.5.5 0 01.5-.5z"
+                clip-rule="evenodd">
             </path>
             <path fill-rule="evenodd"
                 d="M7.646 2.646a.5.5 0 01.708 0l3 3a.5.5 0 01-.708.708L8 3.707 5.354 6.354a.5.5 0 11-.708-.708l3-3z"

@@ -35,6 +35,7 @@ return [
     'aboutTitle' => 'Transformez vos idées en réalité digitale',
     'aboutText' => 'Chez BinaryBloom, nous sommes passionnés par l\'innovation digitale et dédiés à offrir des solutions sur mesure pour répondre à vos besoins spécifiques. Fort de ses 7 ans d\'expérience, Binary Bloom est une équipe dynamique de professionnels spécialisés dans le développement web, mobile et le marketing digital.',
     'u' => 'Nos',
+    'ur' => 'Notre',
     'offer' => 'Nous offrons un service de qualité supérieure pour répondre efficacement à vos besoins',
     's1' => 'Optez pour une identité visuelle distinctive et mémorable',
     's2' => 'Optimisez votre présence en ligne avec un site internet',
@@ -61,4 +62,18 @@ return [
     'subscribe' => 'Souscrire',   
     'digCom' => 'Communication Digitale', 
     'digMark' => 'Marketing Digitale', 
+
+    'collaboration_text' => 'Notre processus de collaboration est conçu pour s\'adapter à vos besoins spécifiques et garantir une communication fluide à chaque étape du projet.',
+
+    'c1_title' => 'Échange initial',
+    'c2_title' => 'Exploration approfondie',
+    'c3_title' => 'Proposition sur mesure',
+    'c4_title' => 'Collecte des renseignements',
+    'c5_title' => 'Suivi et ajustements',
+
+    'c1' => 'Réunion initiale pour comprendre vos attentes, vision et éléments clés. Crucial pour personnaliser notre approche à votre entreprise.',
+    'c2' => 'Analyse approfondie de vos besoins, évaluation détaillée du marché, des concurrents, et des tendances pour formuler une stratégie personnalisée.',
+    'c3' => 'Proposition détaillée, sur mesure pour votre entreprise. Elle met en avant les services recommandés et les étapes clés de la collaboration.',
+    'c4' => 'En étroite collaboration avec votre équipe, nous apportons notre expertise pour construire un contenu efficace et percutant pour votre site',
+    'c5' => 'Durant toute la collaboration, une communication ouverte est maintenue. Notre objectif final est votre satisfaction et la réussite de votre projet.',
 ];

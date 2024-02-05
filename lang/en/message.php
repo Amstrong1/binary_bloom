@@ -35,6 +35,7 @@ return [
     'aboutTitle' => 'Transform Your Ideas into Digital Reality',
     'aboutText' => 'At BinaryBloom, we are passionate about digital innovation and dedicated to providing tailor-made solutions to meet your specific needs. With 7 years of experience, Binary Bloom is a dynamic team of professionals specializing in web development, mobile, and digital marketing.',
     'u' => 'Our',
+    'ur' => 'Our',
     'offer' => 'We offer a superior quality service to effectively meet your needs',
     's1' => 'Opt for a distinctive and memorable visual identity',
     's2' => 'Optimize your online presence with a website',
@@ -61,5 +62,19 @@ return [
     'subscribe' => 'Subscribe',
     'digCom' => 'Digital Communication', 
     'digMark' => 'Digital Marketing', 
+
+    'collaboration_text' => 'Our collaboration process is designed to adapt to your specific needs and ensure smooth communication at every stage of the project.',
+
+    'c1_title' => 'Initial exchange',
+    'c2_title' => 'In-Depth Exploration',
+    'c3_title' => 'Tailor-made proposal',
+    'c4_title' => 'Collection of information',
+    'c5_title' => 'Monitoring and adjustments',
+
+    'c1' => 'Initial meeting to understand your expectations, vision, and key elements. Crucial to fully grasp your business and customize our approach accordingly.',
+    'c2' => 'Analysis of your needs, detailed evaluation of your target market, competitors, and current industry trends to craft a personalized strategy.',
+    'c3' => 'Crafting a tailored proposal outlining recommended services and key collaboration steps, highlighting solutions best suited to your specific needs.',
+    'c4' => 'Working closely with your team, we offer our expertise, if needed, to build impactful and effective content for your website.',
+    'c5' => 'Throughout our collaboration, we uphold open communication. Our ultimate goal is your satisfaction and the success of your online project.',
 
 ];
