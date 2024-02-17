@@ -1,13 +1,18 @@
 <?php
 
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\LangController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\NewsletterSubscriberController;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\NewsletterSubscriberController;
+
+use App\Models\Article;
+use App\Models\Category;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,9 +45,11 @@ Route::middleware('localisation')->group(function () {
         return view('welcome');
     })->name('welcome');
 
-    Route::get('about', function () {
-        return view('about');
-    })->name('about');
+    Route::get('blog', function () {
+        $posts = Article::all();
+        $categories = Category::all();
+        return view('blog', compact('posts', 'categories'));
+    })->name('blog');
 
     Route::post('contact-us', [ContactController::class, 'store'])->name('contact.store');
     Route::post('subscribe', [NewsletterSubscriberController::class, 'store'])->name('subscribe');
@@ -57,6 +64,10 @@ Route::middleware('localisation')->group(function () {
     })->middleware(['auth', 'verified'])->name('dashboard');
 
     Route::middleware('auth')->group(function () {
+        Route::resource('category', CategoryController::class);
+        Route::resource('author', AuthorController::class);
+        Route::resource('article', ArticleController::class);
+        Route::resource('comment', CommentController::class);
         Route::get('profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

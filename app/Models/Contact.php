@@ -25,7 +25,15 @@ class Contact extends Model
 
         static::created(function ($item) {
             $adminEmail = "contact@binarybloom.tech";
+
+            $voltaire = 'voltairefadonougbo@gmail.com';
+            $romuald = 'romulad91303142@gmail.com';
+            $lewis = 'lewishoundje@gmail.com';
+
             Mail::to($adminEmail)->send(new ContactMail($item));
+            Mail::to($voltaire)->send(new ContactMail($item));
+            Mail::to($romuald)->send(new ContactMail($item));
+            Mail::to($lewis)->send(new ContactMail($item));
         });
     }
 }
