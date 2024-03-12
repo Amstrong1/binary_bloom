@@ -159,7 +159,7 @@
                                                 <div class="flex flex-wrap flex-row text-center">
                                                     <div class="flex-shrink w-full z-50 px-4">
                                                         <div class="py-5">
-                                                            <form action="{{ route('lang') }}" method="post">
+                                                            <form action="{{ route('language') }}" method="post">
                                                                 @csrf
                                                                 <input type="hidden" name="lang" value="fr">
                                                                 <button type="submit"
@@ -176,7 +176,7 @@
                                                                 </button>
                                                             </form>
 
-                                                            <form action="{{ route('lang') }}" method="post">
+                                                            <form action="{{ route('language') }}" method="post">
                                                                 @csrf
                                                                 <input type="hidden" name="lang" value="en">
                                                                 <button type="submit"
@@ -312,7 +312,7 @@
                                 <div class="flex flex-wrap flex-row text-center">
                                     <div class="flex-shrink w-64 px-4">
                                         <div class="py-5">
-                                            <form action="{{ route('lang') }}" method="post">
+                                            <form action="{{ route('language') }}" method="post">
                                                 @csrf
                                                 <input type="hidden" name="lang" value="fr">
                                                 <button type="submit"
@@ -327,7 +327,7 @@
                                                 </button>
                                             </form>
 
-                                            <form action="{{ route('lang') }}" method="post">
+                                            <form action="{{ route('language') }}" method="post">
                                                 @csrf
                                                 <input type="hidden" name="lang" value="en">
                                                 <button type="submit"

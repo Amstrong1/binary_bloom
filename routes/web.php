@@ -54,10 +54,10 @@ Route::middleware('localisation')->group(function () {
     Route::post('contact-us', [ContactController::class, 'store'])->name('contact.store');
     Route::post('subscribe', [NewsletterSubscriberController::class, 'store'])->name('subscribe');
 
-    Route::post('lang', function () {
+    Route::post('language', function () {
         Session::put('locale', request()->lang);
         return back();
-    })->name('lang');
+    })->name('language');
 
     Route::get('dashboard', function () {
         return view('dashboard');
