@@ -119,7 +119,7 @@ class ArticleController extends Controller
             Alert::success("Suppression", "Succès");
             return redirect('article');
         } catch (\Exception $e) {
-            Alert::error("Oops", "Suppression éffetuée avec succès",);
+            Alert::error("Oops", "Une erreur est survenue",);
             return redirect()->back();
         }
     }

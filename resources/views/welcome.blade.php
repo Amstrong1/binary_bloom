@@ -117,10 +117,10 @@
                                             <a href="/#portfolio"
                                                 class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">{{ __('message.portfolio') }}</a>
                                         </li>
-                                        <li class="relative">
+                                        {{-- <li class="relative">
                                             <a href="/blog"
                                                 class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">{{ __('Blog') }}</a>
-                                        </li>
+                                        </li> --}}
                                         <li class="relative">
                                             <a href="/#contact"
                                                 class="block py-3 px-4 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100">{{ __('message.contact') }}</a>
@@ -261,14 +261,14 @@
                             </a>
                         </li>
 
-                        <li class="relative">
+                        {{-- <li class="relative">
                             <a class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
                                 href="/blog">
                                 <span
                                     class="absolute bottom-4 ltr:left-1/2 rtl:right-1/2 transform ltr:-translate-x-1/2 rtl:translate-x-1/2 w-6 h-0.5 bg-blue-700 transition duration-700 ease-in-out opacity-0 group-hover:opacity-100"></span>
                                 {{ __('Blog') }}
                             </a>
-                        </li>
+                        </li> --}}
 
                         <li class="relative">
                             <a class="group block py-3 lg:py-7 px-6 hover:text-blue-700 focus:text-blue-700 dark:hover:text-gray-100 dark:focus:text-gray-100"
